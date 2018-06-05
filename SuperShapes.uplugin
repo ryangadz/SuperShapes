@@ -1,16 +1,16 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.0",
+	"VersionName": "0.1",
 	"FriendlyName": "SuperShapes",
 	"Description": "material functions for making shapes",
-	"Category": "Other",
+	"Category": "Materials",
 	"CreatedBy": "gadz.tech",
-	"CreatedByURL": "",
-	"DocsURL": "",
+	"CreatedByURL": "https://twitter.com/gadztech",
+	"DocsURL": "https://github.com/ryangadz/Supershapes_Samples",
 	"MarketplaceURL": "",
-	"SupportURL": "",
+	"SupportURL": "https://discord.gg/c7huTB",
 	"CanContainContent": true,
 	"IsBetaVersion": true,
-	"Installed": false
+	"Installed": true
 }
