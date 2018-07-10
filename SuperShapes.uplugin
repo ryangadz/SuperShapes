@@ -12,5 +12,12 @@
 	"SupportURL": "https://discord.gg/c7huTB",
 	"CanContainContent": true,
 	"IsBetaVersion": true,
-	"Installed": true
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "SuperShapes",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
 }
