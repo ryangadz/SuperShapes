@@ -46,7 +46,7 @@ TSharedRef< FSlateStyleSet > FSuperShapesStyle::Create()
 	TSharedRef< FSlateStyleSet > Style = MakeShareable(new FSlateStyleSet("SuperShapesStyle"));
 	Style->SetContentRoot(IPluginManager::Get().FindPlugin("SuperShapes")->GetBaseDir() / TEXT("Resources"));
 
-	Style->Set("SuperShapes.PluginAction", new IMAGE_BRUSH(TEXT("ButtonIcon_40x"), Icon40x40));
+	Style->Set("SuperShapes.PluginAction", new IMAGE_BRUSH(TEXT("Icon128"), Icon40x40));
 
 	return Style;
 }

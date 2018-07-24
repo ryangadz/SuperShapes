@@ -5,7 +5,7 @@
 #include "SuperShapesCommands.h"
 #include "Misc/MessageDialog.h"
 #include "Framework/MultiBox/MultiBoxBuilder.h"
-
+#include "Editor/MaterialEditor/Public/MaterialEditorModule.h"
 #include "LevelEditor.h"
 
 static const FName SuperShapesTabName("SuperShapes");
@@ -28,8 +28,9 @@ void FSuperShapesModule::StartupModule()
 		FExecuteAction::CreateRaw(this, &FSuperShapesModule::PluginButtonClicked),
 		FCanExecuteAction());
 		
-	FLevelEditorModule& LevelEditorModule = FModuleManager::LoadModuleChecked<FLevelEditorModule>("LevelEditor");
-	
+	//FLevelEditorModule& LevelEditorModule = FModuleManager::LoadModuleChecked<FLevelEditorModule>("LevelEditor");
+	IMaterialEditorModule& LevelEditorModule = FModuleManager::LoadModuleChecked<IMaterialEditorModule>("MaterialEditor");
+
 	{
 		TSharedPtr<FExtender> MenuExtender = MakeShareable(new FExtender());
 		MenuExtender->AddMenuExtension("WindowLayout", EExtensionHook::After, PluginCommands, FMenuExtensionDelegate::CreateRaw(this, &FSuperShapesModule::AddMenuExtension));
@@ -39,7 +40,7 @@ void FSuperShapesModule::StartupModule()
 	
 	{
 		TSharedPtr<FExtender> ToolbarExtender = MakeShareable(new FExtender);
-		ToolbarExtender->AddToolBarExtension("Settings", EExtensionHook::After, PluginCommands, FToolBarExtensionDelegate::CreateRaw(this, &FSuperShapesModule::AddToolbarExtension));
+		ToolbarExtender->AddToolBarExtension("Asset", EExtensionHook::After, PluginCommands, FToolBarExtensionDelegate::CreateRaw(this, &FSuperShapesModule::AddToolbarExtension));
 		
 		LevelEditorModule.GetToolBarExtensibilityManager()->AddExtender(ToolbarExtender);
 	}
@@ -58,7 +59,7 @@ void FSuperShapesModule::PluginButtonClicked()
 {
 	// Put your "OnButtonClicked" stuff here
 	FText DialogText = FText::Format(
-							LOCTEXT("PluginButtonDialogText", "Add code to {0} in {1} to override this button's actions"),
+							LOCTEXT("PluginButtonDialogText", "Comming soon"),
 							FText::FromString(TEXT("FSuperShapesModule::PluginButtonClicked()")),
 							FText::FromString(TEXT("SuperShapes.cpp"))
 					   );
