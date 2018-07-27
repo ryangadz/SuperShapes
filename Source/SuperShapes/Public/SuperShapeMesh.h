@@ -1,9 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2018 gadz.tech, All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "ProceduralMeshComponent.h"
+#include "Runtime/CoreUObject/Public/UObject/ConstructorHelpers.h"
+#include "Materials/MaterialInstanceDynamic.h"
 #include "SuperShapeMesh.generated.h"
 
 /**
@@ -34,6 +36,13 @@ public:
 	float N3 = 1.f;
 
 	UPROPERTY()
+	class UMaterialInterface* DefaultMaterial;
+
+	UPROPERTY()
+	class UMaterialInstanceDynamic* InstancedMaterial;
+
+
+	UPROPERTY()
 	TArray<FVector> Vertices;
 
 	UPROPERTY()
@@ -58,5 +67,13 @@ public:
 	void BuildSuperShapeMesh();
 
 	virtual void PostLoad() override;
+
+	virtual void PostInitProperties() override;
+
+	virtual void OnRegister() override;
+
+	#if WITH_EDITOR
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+	#endif
 
 };

@@ -1,4 +1,4 @@
-// Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
+// Copyright 2018 gadz.tech, All Rights Reserved.
 
 #pragma once
 
