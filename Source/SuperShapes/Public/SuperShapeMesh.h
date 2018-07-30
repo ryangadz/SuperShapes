@@ -35,6 +35,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite,DisplayName = "N3", Category = "SuperShape Properties")
 	float N3 = 1.f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite,DisplayName = "Parent Material", Category = "SuperShape Properties")
+	class UMaterialInterface* ParentMaterial;
+
 	UPROPERTY()
 	class UMaterialInterface* DefaultMaterial;
 

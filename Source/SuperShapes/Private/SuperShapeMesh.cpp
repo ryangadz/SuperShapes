@@ -9,6 +9,7 @@ USuperShapeMesh::USuperShapeMesh(const FObjectInitializer &ObjectInitializer) : 
     if(defMaterial.Object != NULL)
     {
         DefaultMaterial = defMaterial.Object;
+        ParentMaterial = DefaultMaterial;
        // InstancedMaterial = UMaterialInstanceDynamic::Create(DefaultMaterial, this);
       //  if (InstancedMaterial != NULL)
       //  this->SetMaterial(0,InstancedMaterial);
@@ -60,7 +61,7 @@ void USuperShapeMesh::OnRegister()
 	Super::OnRegister();
 
 	BuildSuperShapeMesh();
-    InstancedMaterial = UMaterialInstanceDynamic::Create(DefaultMaterial, this);
+    InstancedMaterial = UMaterialInstanceDynamic::Create(ParentMaterial, this);
         if (InstancedMaterial != NULL)
         {
             InstancedMaterial->SetScalarParameterValue("M", M);

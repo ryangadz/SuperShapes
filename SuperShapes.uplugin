@@ -1,14 +1,14 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "0.2",
+	"VersionName": "0.2.1",
 	"FriendlyName": "SuperShapes",
 	"Description": "material functions for making shapes",
 	"Category": "Materials",
 	"CreatedBy": "gadz.tech",
 	"CreatedByURL": "https://twitter.com/gadztech",
 	"DocsURL": "https://github.com/ryangadz/Supershapes_Samples",
-	"MarketplaceURL": "",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/650322c33fc540a3b9a576feccba575f",
 	"SupportURL": "https://discord.gg/c7huTB",
 	"CanContainContent": true,
 	"IsBetaVersion": true,
@@ -17,7 +17,14 @@
 		{
 			"Name": "SuperShapes",
 			"Type": "Editor",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Win32",
+				"Mac",
+				"IOS",
+				"Android"
+			]
 		}
 	],
 	"Plugins": [
